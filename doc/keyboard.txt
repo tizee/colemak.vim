@@ -1,0 +1,44 @@
+*keyboard.txt* The keyboard plugin for neovim/vim
+
+
+                _  _ ____ _   _ ___  ____ ____ ____ ___   _  _ _ _  _ ~
+                |_/  |___  \_/  |__] |  | |__| |__/ |  \  |  | | |\/| ~
+                | \_ |___   |   |__] |__| |  | |  \ |__/ . \/  | |  | ~
+
+Author: Jeff Chiang <pobomp AT gmail DOT COM>
+License: DO WHAT THE FUCK YOU WANT TO LICENSE (WTFPL)
+Homepage: https://github.com/tizee/keyboard.vim
+
+==============================================================================
+CONTENTS                                                   *keyboard-contents*
+
+  1. Intro...........|keyboard-intro|
+  2. Usage...........|keyboard-usage|
+
+==============================================================================
+1. Intro                                                   *keyboard-intro*
+
+  A plugin help manage key mappings for different keyboard layout.
+
+==============================================================================
+2. Usage                                                   *keyboard-usage*
+
+  Right now it only support two commands
+                                                            *:KB*
+  :KB [{layout}]
+
+  Print current layout if no layout is given, otherwise switch to the layout
+if keymapping file is founded.
+  
+                                                            *:KBSwitch*
+  :KBSwitch
+
+  Prompt and select the layout. 
+
+
+==============================================================================
+LICENSE                                                   *keyboard-license*
+
+WTFPL
+
+vim:ft=help:norl:tw=78:ts=8 
