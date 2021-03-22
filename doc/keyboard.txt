@@ -14,27 +14,34 @@ CONTENTS                                                   *keyboard-contents*
 
   1. Intro...........|keyboard-intro|
   2. Usage...........|keyboard-usage|
+  3. Options.........|keyboard-options|
 
 ==============================================================================
 1. Intro                                                   *keyboard-intro*
 
-  A plugin help manage key mappings for different keyboard layout.
+A plugin help manage key mappings for different keyboard layout.
 
 ==============================================================================
 2. Usage                                                   *keyboard-usage*
 
-  Right now it only support two commands
+  Right now it only support two commands.
                                                             *:KB*
+>
   :KB [{layout}]
 
-  Print current layout if no layout is given, otherwise switch to the layout
+Print current layout if no layout is given, otherwise switch to the layout
 if keymapping file is founded.
-  
+
                                                             *:KBSwitch*
+>
   :KBSwitch
 
-  Prompt and select the layout. 
+Prompt and select the layout. 
 
+==============================================================================
+3. Usage                                                   *keyboard-options*
+
+WIP
 
 ==============================================================================
 LICENSE                                                   *keyboard-license*
