@@ -6,7 +6,7 @@
                 | \_ |___   |   |__] |__| |  | |  \ |__/ . \/  | |  | ~
 
 Author: Jeff Chiang <pobomp AT gmail DOT COM>
-License: DO WHAT THE FUCK YOU WANT TO LICENSE (WTFPL)
+License: MIT
 Homepage: https://github.com/tizee/keyboard.vim
 
 ==============================================================================
@@ -15,6 +15,7 @@ CONTENTS                                                   *keyboard-contents*
   1. Intro...........|keyboard-intro|
   2. Usage...........|keyboard-usage|
   3. Options.........|keyboard-options|
+  4. License.........|keyboard-license|
 
 ==============================================================================
 1. Intro                                                   *keyboard-intro*
@@ -25,27 +26,50 @@ A plugin help manage key mappings for different keyboard layout.
 2. Usage                                                   *keyboard-usage*
 
   Right now it only support two commands.
-                                                            *:KB*
+                                                            *:Keyboard*
 >
-  :KB [{layout}]
+  :Keyboard [{layout}]
 
 Print current layout if no layout is given, otherwise switch to the layout
 if keymapping file is founded.
 
-                                                            *:KBSwitch*
+                                                            *:KeyboardSwitch*
 >
-  :KBSwitch
+  :KeyboardSwitch
 
 Prompt and select the layout. 
 
 ==============================================================================
-3. Usage                                                   *keyboard-options*
+3. Options                                                   *keyboard-options*
 
-WIP
+
+     *g:keyboard_default_layout* *g:keyboard_current_layout* *g:keyboard_layout_paths* *g:keyboard_layouts* *g:keyboard_autoresource*
+
+`g:keyboard_default_layout` 
+
+default value: ''
+
+`g:keyboard_current_layout`
+
+internal variable represents current layout
+
+`g:keyboard_layout_paths`
+
+kv dict for layouts and paths default value: {}
+
+`g:keyboard_layouts`
+
+internal variable represents loaded layout list
+
+`g:keyboard_autoresource`
+
+Whether auto resource current layout keymapping file when detecting changes 
+
+default value: 1
 
 ==============================================================================
 LICENSE                                                   *keyboard-license*
 
-WTFPL
+MIT
 
 vim:ft=help:norl:tw=78:ts=8 

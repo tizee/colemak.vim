@@ -8,7 +8,6 @@ let g:loaded_keyboard_vim = 1
 " options
 let g:keyboard_default_layout=get(g:,'keyboard_default_layout','')
 let g:keyboard_current_layout=g:keyboard_default_layout
-" file path to layout keymappings
 let g:keyboard_layout_paths=get(g:,'keyboard_layout_paths',{})
 let g:keyboard_layouts=sort(keys(g:keyboard_layout_paths))
 if !empty(g:keyboard_layouts)
@@ -21,7 +20,7 @@ function! s:SourceKeyMappings(filepath)
     return
   endif
   if index(values(g:keyboard_layout_paths),a:filepath) >= 0 && g:keyboard_current_layout_keymappings == a:filepath
-    echo 're-source '  . a:filepath
+    echom 're-source '  . a:filepath
     let l:cmd = 'source ' . a:filepath
     execute(l:cmd)
   endif
@@ -35,13 +34,16 @@ augroup keyboard
   endif
 augroup END
 
-" map interface expose to user
 nnoremap <unique> <expr> <Plug>KeyboardSwitch keyboard#prompt_swtich()
+
+function! s:names(...)
+  return sort(keys(g:keyboard_layout_paths))
+endfunction
 
 " commands
 if !exists(":keyboard")
-  command! -nargs=0 KBSwitch call keyboard#prompt_swtich()
-  command! -nargs=* KB call keyboard#actions(<f-args>)
+  command! -nargs=0 -bang KeyboardSwitch call keyboard#prompt_swtich()
+  command! -nargs=* -bang -complete=customlist,s:names Keyboard call keyboard#actions(<f-args>)
 endif 
 
 call keyboard#init()
