@@ -41,7 +41,7 @@ function! s:names(...)
 endfunction
 
 " commands
-if !exists(":keyboard")
+if !exists(":Keyboard")
   command! -nargs=0 -bang KeyboardSwitch call keyboard#prompt_swtich()
   command! -nargs=* -bang -complete=customlist,s:names Keyboard call keyboard#actions(<f-args>)
 endif 
